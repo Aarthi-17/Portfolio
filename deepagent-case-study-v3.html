@@ -113,9 +113,10 @@ body {
 }
 .hero-img img {
   width: 100%;
-  border-radius: 14px;
+  border-radius: 16px;
   display: block;
   border: 1px solid #e8e5e0;
+  box-shadow: 0 12px 28px rgba(20,21,21,.08);
 }
 
 /* META ROW */
@@ -125,28 +126,20 @@ body {
   padding: 0 48px 40px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  gap: 24px;
 }
-.meta-item {
-  padding: 20px 0;
-  border-top: 1px solid #e8e5e0;
-}
-.meta-item:not(:last-child) {
-  padding-right: 24px;
-  border-right: 1px solid #e8e5e0;
-  margin-right: 24px;
-}
+
 .meta-label {
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.8px;
   color: #888580;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 .meta-val {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 700;
   color: #141515;
 }
 .meta-val a { color: #141515; text-decoration: underline; text-underline-offset: 3px; }
@@ -165,7 +158,7 @@ hr.div { border: none; border-top: 1px solid #e8e5e0; margin: 40px 0; }
 
 .section-title {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 16px;
   color: #141515;
 }
@@ -222,10 +215,11 @@ ul.dash li::before {
 /* SCREEN IMAGES */
 .screen {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   margin: 20px 0;
   border: 1px solid #e8e5e0;
+  box-shadow: 0 12px 28px rgba(20,21,21,.06);
 }
 .screen img {
   width: 100%;
@@ -304,25 +298,12 @@ ul.dash li::before {
 .learned-item p { font-size: 15px; color: #333; margin: 0; }
 
 /* CONCLUSION */
-.conclusion {
-  background: #f7f6f4;
-  color: #141515;
-  border: 1px solid #e8e5e0;
-  border-radius: 16px;
-  padding: 48px 44px;
-  margin-top: 20px;
-}
-.conclusion h2 {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: #141515;
-  letter-spacing: -0.3px;
-}
+.conclusion { margin-top: 4px; }
 .conclusion p {
-  color: #4a4a4a;
+  color: #6b6b6b;
   font-size: 15px;
-  margin-bottom: 12px;
+  line-height: 1.75;
+  margin-bottom: 16px;
 }
 .conclusion p:last-child { margin: 0; }
 
@@ -403,8 +384,7 @@ ul.dash li::before {
     padding-right: 20px;
   }
   .meta-row { grid-template-columns: 1fr; }
-  .meta-item:not(:last-child) { padding-right: 0; border-right: none; margin-right: 0; border-bottom: 1px solid #e8e5e0; }
-  .impact-grid { grid-template-columns: 1fr; }
+    .impact-grid { grid-template-columns: 1fr; }
   .page-footer { flex-direction: column; gap: 16px; align-items: flex-start; }
   .to-top { right: 18px; bottom: 18px; width: 44px; height: 44px; }
 }
@@ -414,13 +394,15 @@ body { cursor: url(assets/cursor.svg) 0 0, auto; }
 
 .cs-topbar { max-width: 860px; margin: 0 auto; padding: 136px 48px 0; }
 .cs-back {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 13px; font-weight: 500; color: #888580; text-decoration: none;
-  transition: color .15s ease, transform .15s ease;
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 14px; font-weight: 600; color: #141515; text-decoration: none;
+  background: #fff; border: 1px solid #e8e5e0; border-radius: 999px;
+  padding: 10px 18px 10px 14px;
+  transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
 .cs-back svg { width: 16px; height: 16px; transition: transform .2s ease; }
-.cs-back:hover { color: #141515; transform: translateX(-2px); }
-.cs-back:hover svg { transform: translateX(-2px); }
+.cs-back:hover { border-color: #141515; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(20,21,21,.12); }
+.cs-back:hover svg { transform: translateX(-3px); }
 
 .hero { text-align: center; padding-top: 20px; }
 .cs-logo { width: 96px; height: 96px; border-radius: 20px; margin: 0 auto 30px; display: block; }
@@ -435,7 +417,6 @@ ul.dash li { font-size: 17px; }
 .challenge-num { font-size: 21px; }
 .issue-label { font-size: 17px; }
 .caption { font-size: 13.5px; }
-.conclusion h2 { font-size: 26px; }
 .conclusion p { font-size: 17px; }
 
 .site-outro { background: #f4f4f4; margin-top: 64px; }
@@ -752,7 +733,6 @@ ul.dash li { font-size: 17px; }
   <section class="section">
     <h2 class="section-title">Conclusion</h2>
     <div class="conclusion">
-      <h2>Conclusion</h2>
       <p>DeepAgent is the product I'm most proud of — not because it's perfect, but because every screen exists for a reason I can explain. It started as a blank canvas and became something real teams use every day to run their marketing, sales, and support workflows on autopilot.</p>
       <p>Building AI products from scratch taught me that the design work lives in the gap between what a system can do and what a user can understand. Closing that gap, carefully, is the whole job.</p>
     </div>

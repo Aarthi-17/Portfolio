@@ -104,9 +104,9 @@
   .project-card-tag{ font-size:14px; font-weight:500; color:#141515b3; background-color:#f4f4f4; padding:6px 12px; border-radius:8px; }
   .see-all-container{ display:flex; justify-content:center; margin-top:64px; }
   .see-all-btn{
-    position:relative; display:inline-flex; align-items:center; gap:18px;
+    position:relative; display:inline-flex; align-items:center;
     font-family:Outfit,sans-serif; font-size:17px; font-weight:600; color:#141515;
-    text-decoration:none; padding:14px 14px 14px 32px; border-radius:16px;
+    text-decoration:none; padding:14px 60px 14px 32px; border-radius:16px;
     background:#fff; border:1px solid rgba(20,21,21,.12); overflow:hidden;
     transition: color .35s ease, border-color .35s ease, transform .35s ease, box-shadow .35s ease;
   }
@@ -117,8 +117,13 @@
     transition: width .4s cubic-bezier(.65,0,.35,1), right .4s cubic-bezier(.65,0,.35,1), border-radius .4s ease;
     z-index:0;
   }
-  .see-all-btn span, .see-all-btn svg{ position:relative; z-index:1; }
-  .see-all-btn svg{ width:20px; height:20px; margin-right:9px; stroke:#fff; stroke-width:2.5; transition: transform .35s ease; }
+  .see-all-btn span{ position:relative; z-index:1; }
+  /* icon sits in its own box matched exactly to ::before, so it's always centered inside it */
+  .see-all-btn .icon{
+    position:absolute; right:7px; top:50%; width:40px; height:40px; transform:translateY(-50%);
+    display:flex; align-items:center; justify-content:center; z-index:1; pointer-events:none;
+  }
+  .see-all-btn svg{ width:18px; height:18px; stroke:#fff; stroke-width:2.5; transition: transform .35s ease; display:block; }
   .see-all-btn:hover{ color:#fff; border-color:#141515; transform:translateY(-2px); box-shadow:0 10px 24px rgba(20,21,21,.18); }
   .see-all-btn:hover::before{ width:calc(100% - 14px); right:7px; border-radius:10px; }
   .see-all-btn:hover svg{ transform:translateX(4px); }
@@ -329,7 +334,7 @@
   <div class="see-all-container">
     <a class="see-all-btn" href="projects.html">
       <span>View All Projects</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </a>
   </div>
 </div>
